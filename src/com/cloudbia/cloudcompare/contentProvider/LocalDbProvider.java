@@ -22,7 +22,12 @@ public class LocalDbProvider extends ContentProvider {
     private MySQLiteHelper dbHelper;
     private static final int PLANS = 1;
     private static final int PLANS_RAW = 2;
-     
+    private static final int PLANS_RAW_GOOGLE=3;
+    private static final int PLANS_RAW_AMAZON=4;
+    private static final int PLANS_RAW_AMAZON_EBS=8;
+    private static final int PLANS_RAW_HP=5;
+    private static final int PLANS_RAW_AZURE=6;
+    private static final int PLANS_RAW_RACKSPACE=7;
     // authority is the symbolic name of your provider
     // To avoid conflicts with other providers, you should use
     // Internet domain ownership (in reverse) as the basis of your provider authority.
@@ -32,6 +37,18 @@ public class LocalDbProvider extends ContentProvider {
             Uri.parse("content://" + AUTHORITY + "/plan");
     public static final Uri PLAN_URI_RAW=
             Uri.parse("content://" + AUTHORITY + "/plan_raw");
+    public static final Uri PLAN_URI_RAW_GOOGLE=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_google");
+    public static final Uri PLAN_URI_RAW_AMAZON=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_amazon");
+    public static final Uri PLAN_URI_RAW_AMAZON_EBS=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_amazon_ebs");
+    public static final Uri PLAN_URI_RAW_HP=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_hp");
+    public static final Uri PLAN_URI_RAW_AZURE=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_azure");
+    public static final Uri PLAN_URI_RAW_RACKSPACE=
+            Uri.parse("content://" + AUTHORITY + "/plan_raw_rackspace");
  
     // a content URI pattern matches content URIs using wildcard characters:
     // *: Matches a string of any valid characters of any length.
@@ -41,7 +58,13 @@ public class LocalDbProvider extends ContentProvider {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
         uriMatcher.addURI(AUTHORITY, "plan", PLANS);
         uriMatcher.addURI(AUTHORITY, "plan_raw", PLANS_RAW);
-      
+        uriMatcher.addURI(AUTHORITY, "plan_raw_google", PLANS_RAW_GOOGLE);
+        uriMatcher.addURI(AUTHORITY, "plan_raw_hp", PLANS_RAW_HP);
+        uriMatcher.addURI(AUTHORITY, "plan_raw_amazon", PLANS_RAW_AMAZON);
+        uriMatcher.addURI(AUTHORITY, "plan_raw_amazon_ebs", PLANS_RAW_AMAZON_EBS);
+        uriMatcher.addURI(AUTHORITY, "plan_raw_azure", PLANS_RAW_AZURE);
+        uriMatcher.addURI(AUTHORITY, "plan_raw_rackspace", PLANS_RAW_RACKSPACE);
+        
     }
     // system calls onCreate() when it starts up the provider.
     @Override
@@ -98,14 +121,24 @@ public class LocalDbProvider extends ContentProvider {
                         String[] selectionArgs, String sortOrder) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
+    	Cursor cursor=null;
         switch (uriMatcher.match(uri)) {
             case PLANS:
                 //do nothing
                 queryBuilder.setTables(Plan.SQLITE_TABLE);
                 break;
             case PLANS_RAW:
-            	Cursor cursor=db.rawQuery("SELECT * FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=? AND Price=(SELECT MIN(price) FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=?)", selectionArgs);
+            	cursor=db.rawQuery("SELECT * FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=? AND Price=(SELECT MIN(price) FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=?)", selectionArgs);
             	return cursor;
+            case PLANS_RAW_GOOGLE:
+            	cursor=db.rawQuery("SELECT * FROM data where provider=? AND cpu>=? AND memory>=? AND Price=(SELECT MIN(price) FROM data where provider=? AND cpu>=? AND memory>=?)", selectionArgs);
+            	return cursor;
+            case PLANS_RAW_AMAZON:
+            	cursor=db.rawQuery("SELECT * FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=? AND Price=(SELECT MIN(price) FROM data where provider=? AND cpu>=? AND memory>=? AND hdd>=? AND os=?)", selectionArgs);
+            	return cursor;
+            case PLANS_RAW_AMAZON_EBS:
+            	cursor=db.rawQuery("SELECT * FROM data where provider=? AND cpu>=? AND memory>=? AND os=? AND hdd=? AND Price=(SELECT MIN(price) FROM data where provider=? AND cpu>=? AND memory>=? AND os=? AND hdd=?)", selectionArgs);
+            	return cursor;            	
             default:
                 throw new IllegalArgumentException("Unsupported URI: " + uri);
         }

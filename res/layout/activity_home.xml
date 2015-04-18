@@ -6,117 +6,26 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.cloudbia.cloudcompare.Home" >
+    tools:context="com.cloudbia.cloudcompare.HomeActivity" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+    <Button
+        android:id="@+id/buttonPublic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonPrivateVsPublic"
+        android:layout_alignRight="@+id/buttonPrivateVsPublic"
+        android:layout_centerVertical="true"
+        android:onClick="showActivity"
+        android:text="Comparison of Public Clouds" />
 
-        <TextView
-            android:id="@+id/TextView1"
-            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CPU" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <SeekBar
-                android:id="@+id/SeekBar1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
-
-            <TextView
-                android:id="@+id/TextViewValue1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/TextView03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RAM"
-            android:textSize="19dp" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <SeekBar
-                android:id="@+id/SeekBar2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
-
-            <TextView
-                android:id="@+id/TextViewValue2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/TextView02"
-	            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HDD" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <SeekBar
-                android:id="@+id/SeekBar3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
-
-            <TextView
-                android:id="@+id/TextViewValue3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView1"
-	            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subscription" />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
-
-            <SeekBar
-                android:id="@+id/SeekBar4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
-
-            <TextView
-                android:id="@+id/TextViewValue4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
-        </LinearLayout>
-    </LinearLayout>
+    <Button
+        android:id="@+id/buttonPrivateVsPublic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPublic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:onClick="showActivity"
+        android:text="Comparison of Public Clouds and Private Clouds" />
 
 </RelativeLayout>
