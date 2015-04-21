@@ -1,0 +1,50 @@
+<RelativeLayout
+    android:background="@color/cloud_custom_green"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent">
+
+<com.cloudbia.cloudcompare.views.ExpandablePanel
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:panel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/expandable_panel"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/abc_cab_background_top_material"
+    panel:content="@+id/value"
+    panel:contentContainer="@+id/content_container"
+    panel:handle="@+id/expand" >
+
+    <Button
+        android:id="@id/expand"
+        android:text="Public Cloud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+    <FrameLayout
+        android:id="@id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/expand"
+        android:paddingBottom="5dp"
+        android:paddingRight="15dp" >
+        <TextView
+            android:text="text"
+            android:id="@id/value"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <!--<some.awesome.package.SomeAwesomeContentView-->
+            <!--android:id="@id/value"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+    </FrameLayout>
+
+
+</com.cloudbia.cloudcompare.views.ExpandablePanel>
+
+</RelativeLayout>

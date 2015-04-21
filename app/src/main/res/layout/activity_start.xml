@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+
+    android:weightSum="1"
+    tools:context="com.cloudbia.cloudcompare.activity.StartActivity">
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="@color/cloud_custom_green"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Public cloud comparison"
+            android:textColor="#fff"
+            android:textSize="30dp" />
+
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="\t\t• Compare your public cloud requirements with five providers"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:onClick="CloudActions"
+            android:id="@+id/publiccloudImage"
+            android:layout_gravity="right"
+            android:textAllCaps="true"
+            android:text="Compare Now"
+            android:background="#12819461"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+        <!--<Button-->
+            <!--android:id="@+id/publiccloudImage"-->
+            <!--android:clickable="true"-->
+            <!--android:onClick="CloudActions"-->
+            <!--android:layout_width="256dp"-->
+            <!--android:layout_height="256dp"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:background="@drawable/public_cloud_clicked" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="10dp"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="@color/cloud_custom_blue"
+        android:clickable="true"
+        android:weightSum="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="Comparison With Public and Private"
+            android:textColor="#fff"
+            android:textSize="30dp" />
+        <TextView
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:text="\t\t• Compare your private cloud requirements with public clouds"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <!--<Button-->
+            <!--android:id="@+id/comparecloudImage"-->
+            <!--android:clickable="true"-->
+
+            <!--android:layout_width="256dp"-->
+            <!--android:layout_height="256dp"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:background="@drawable/comparison_cloud_clicked" />-->
+
+        <Button
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:onClick="CloudActions"
+            android:id="@+id/comparecloudImage"
+            android:layout_gravity="right"
+            android:textAllCaps="true"
+            android:text="Compare Now"
+            android:background="#12819461"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
