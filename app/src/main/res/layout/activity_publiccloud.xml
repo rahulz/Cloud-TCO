@@ -9,17 +9,28 @@
     android:background="@color/cloud_custom_green"
     tools:context="com.cloudbia.cloudcompare.activity.PublicCloudActivty" >
 
+
+    <TextView
+        android:gravity="center"
+        android:textSize="24dp"
+        android:id="@+id/toplabel"
+        android:textColor="@color/abc_primary_text_disable_only_material_dark"
+        android:text="Config your requirement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/toplabel"
         android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <TextView
+            style="@style/seekLabelStyle"
             android:id="@+id/TextView1"
-            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="CPU" />
 
         <LinearLayout
@@ -27,52 +38,39 @@
             android:layout_height="wrap_content" >
 
             <SeekBar
-
-                android:id="@+id/seekBar_CPU"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
+                style="@style/seekBarStyle"
+                android:id="@+id/seekBar_CPU" />
 
             <TextView
-                android:id="@+id/TextViewValue1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
+                android:id="@+id/seekCPU_Value"
+                style="@style/seekValueStyle"
+                android:text="0x"
+                 />
         </LinearLayout>
 
         <TextView
             android:id="@+id/TextView03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="RAM"
-            android:textSize="19dp" />
+            style="@style/seekLabelStyle" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <SeekBar
-                android:id="@+id/SeekBar2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
+                android:id="@+id/seekBar_RAM"
+                style="@style/seekBarStyle"
+                />
 
             <TextView
-                android:id="@+id/TextViewValue2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="0" />
+                style="@style/seekValueStyle"
+                android:id="@+id/seekRAM_Value"
+                android:text="0GB" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/TextView02"
-	            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/seekLabelStyle"
             android:text="HDD" />
 
         <LinearLayout
@@ -80,45 +78,67 @@
             android:layout_height="wrap_content" >
 
             <SeekBar
-                android:id="@+id/SeekBar3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
+                android:id="@+id/seekBar_HDD"
+                style="@style/seekBarStyle"/>
 
             <TextView
-                android:id="@+id/TextViewValue3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:id="@+id/seekHDD_Value"
+                style="@style/seekValueStyle"
                 android:text="0" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView1"
-	            android:textSize="19dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subscription" />
+            style="@style/seekLabelStyle"
+	        android:text="Subscription" />
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <SeekBar
-                android:id="@+id/SeekBar4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="10dp" />
+                android:id="@+id/seekBar_SUB"
+                style="@style/seekBarStyle"
+                />
 
             <TextView
-                android:id="@+id/TextViewValue4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:id="@+id/seekSUB_Value"
+                style="@style/seekValueStyle"
                 android:text="0" />
         </LinearLayout>
+        <RadioGroup
+            android:id="@+id/osSelection"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:text="Linux"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:layout_marginLeft="10dp"
+                android:text="Windows"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </RadioGroup>
+
+
     </LinearLayout>
+
+    <Button
+        android:textColor="#fff"
+        android:onClick="CompareAction"
+        android:id="@+id/publiccloudImage"
+        android:textAllCaps="true"
+        android:text="Compare Now"
+
+        android:background="#12819461"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:layout_alignEnd="@+id/linearLayout1" />
 
 </RelativeLayout>

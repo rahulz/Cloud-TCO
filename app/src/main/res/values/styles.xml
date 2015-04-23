@@ -25,5 +25,31 @@
         <item name="android:layout_marginRight">0dp</item>
     </style>
 
+    <style name="seekBarStyle">
+        <item name="android:progressDrawable">@drawable/cloud_progress_bar</item>
+        <item name="android:thumb">@android:drawable/btn_default_small</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.9</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="seekLabelStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/abc_primary_text_disable_only_material_dark</item>
+
+    </style>
+
+    <style name="seekValueStyle">
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/abc_primary_text_disable_only_material_dark</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0.1</item>
+    </style>
+
 
 </resources>

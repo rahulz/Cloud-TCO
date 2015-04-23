@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/background" >
+
+        <shape>
+            <gradient
+                android:startColor="#80000000"
+                android:centerColor="#80000000"
+                android:centerX="1"
+                android:endColor="#80000000"
+                android:angle="0"
+                />
+        </shape>
+    </item>
+    <item android:id="@android:id/secondaryProgress" >
+        <clip android:clipOrientation="horizontal" android:gravity="left" >
+            <shape>
+                <gradient
+                    android:startColor="@color/cloud_custom_blue"
+                    android:centerColor="@color/cloud_custom_blue"
+                    android:centerX="0.75"
+                    android:endColor="@color/cloud_dark_blue"
+                    android:angle="0"
+                    />
+            </shape>
+        </clip>
+    </item>
+
+    <item android:id="@android:id/progress" >
+        <clip android:clipOrientation="horizontal" android:gravity="left" >
+            <shape>
+                <gradient
+                    android:startColor="@color/cloud_custom_blue"
+                    android:centerColor="@color/cloud_custom_blue"
+                    android:centerX="0.75"
+                    android:endColor="@color/cloud_dark_blue"
+                    android:angle="0"
+                    />
+            </shape>
+        </clip>
+    </item>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">-->
+    <!--<item android:id="@android:id/background" android:drawable="@android:drawable/spinner_background"></item>-->
+    <!--<item android:id="@android:id/progress" android:drawable="@drawable/search_progress_clip"></item>-->
+    <!--</layer-list>-->
+
+</layer-list>
