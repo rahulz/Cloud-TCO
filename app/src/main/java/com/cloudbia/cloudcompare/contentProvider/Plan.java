@@ -8,6 +8,7 @@ public class Plan {
 	public static final String HDD= "hdd";
 	public static final String PRICE= "price";
 	public static final String OS= "os";
+	public static final String SUBSCRIPTION= "subscription";
 	public static final String SQLITE_TABLE= "data";
 	
 	public static final double PLAN_GOOGLE_OS_PRICE_LINUX = 0.06;

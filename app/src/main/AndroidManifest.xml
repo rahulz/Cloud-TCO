@@ -29,7 +29,7 @@
 
         <activity
             android:name=".activity.SplashActivty"
-            android:label="@string/title_activity_splash_activty" >
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,6 +47,10 @@
         <activity
             android:name=".activity.CompareCloudActivity"
             android:label="@string/title_activity_public_cloud" >
+        </activity>
+        <activity
+            android:name=".activity.ComplareDisplayActivity"
+            android:label="@string/title_activity_complare_display" >
         </activity>
     </application>
 

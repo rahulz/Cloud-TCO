@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:weightSum="1"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#80000000"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+
+        android:layout_weight="0.30"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_height="match_parent"
+        android:text="Provider"
+
+        android:id="@+id/cloud_provider" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight=".40"
+        android:layout_width="0dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cloud_ram"
+            android:text="12GB RAM"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/cloud_hdd"
+            android:text="10GB HDD"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/cloud_subscription"
+            android:text="1 Year"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/cloud_os"
+        android:layout_weight=".30"
+        android:text="Linux"
+        android:textSize="15sp"
+        android:textColor="#fff"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_height="30dp" />
+
+</LinearLayout>

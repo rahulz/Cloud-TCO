@@ -113,12 +113,15 @@
             android:layout_height="wrap_content">
             <RadioButton
                 android:text="Linux"
+                android:id="@+id/radioLinux"
                 android:textColor="#fff"
+                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <RadioButton
                 android:layout_marginLeft="10dp"
                 android:text="Windows"
+                android:id="@+id/radioWindows"
                 android:textColor="#fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

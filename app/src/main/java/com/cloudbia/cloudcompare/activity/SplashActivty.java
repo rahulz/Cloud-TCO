@@ -6,6 +6,10 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
 import com.cloudbia.cloudcompare.R;
+import com.cloudbia.cloudcompare.contentProvider.CustomAuthenticationListener;
+import com.ibm.mobilefirstplatform.clientsdk.android.core.api.BMSClient;
+
+import java.net.MalformedURLException;
 
 public class SplashActivty extends FragmentActivity {
 
@@ -13,6 +17,12 @@ public class SplashActivty extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_activty);
+//        try {
+//            BMSClient.getInstance().initialize(this, "<APPLICATION_ROUTE>", "<APPLICATION_ID>");
+//            BMSClient.getInstance().;
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
 
         new Handler().postDelayed(new Runnable() {
 
@@ -28,6 +38,7 @@ public class SplashActivty extends FragmentActivity {
                 Intent i = new Intent(SplashActivty.this, StartActivity.class);
                 startActivity(i);
 
+                // initialize SDK with IBM Bluemix application ID and route
                 // close this activity
                 finish();
             }
